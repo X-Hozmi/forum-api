@@ -22,15 +22,6 @@ jobs:
             git clone https://github.com/X-Hozmi/forum-api.git ~/forum-api
           fi
           cd ~/forum-api
-          if ! command -v npm &> /dev/null
-          then
-            curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-            sudo apt-get install -y nodejs
-          fi
-          if ! command -v pm2 &> /dev/null
-          then
-            sudo npm install -g pm2
-          fi
           git pull origin main
           npm install
           npm run sequelize:setup
