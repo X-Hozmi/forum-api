@@ -18,9 +18,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.SSH_PORT }}
         script: |
-          if [ ! -d "~/forum-api" ]; then
-            git clone https://github.com/X-Hozmi/forum-api.git ~/forum-api
-          fi
+          git clone https://github.com/X-Hozmi/forum-api.git ~/forum-api
           cd ~/forum-api
           git pull origin main
           npm install
