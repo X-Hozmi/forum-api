@@ -16,8 +16,14 @@ jobs:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_KEY }}
-        port: ${{ secrets.SSH_PORT }}
-        envs: DBPROTOCOL=${{ secrets.DBPROTOCOL }}
+        port: ${{ secrets.SSH_PORT }}\
+        envs:
+          DBPROTOCOL: ${{ secrets.DBPROTOCOL }}
+          PGHOST: ${{ secrets.PGHOST }}
+          PGPORT: ${{ secrets.PGPORT }}
+          PGUSER: ${{ secrets.PGUSER }}
+          PGPASSWORD: ${{ secrets.PGPASSWORD }}
+          PGDATABASE: ${{ secrets.PGDATABASE }}
         script: |
           git clone https://github.com/X-Hozmi/forum-api.git ~/forum-api
           cd ~/forum-api
