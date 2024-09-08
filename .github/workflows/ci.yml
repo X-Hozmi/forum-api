@@ -20,7 +20,7 @@ jobs:
         env:
          POSTGRES_USER: postgres
          POSTGRES_PASSWORD: mysecretpassword
-         POSTGRES_DB: forumapi
+         POSTGRES_DB: forumapi_test
          
         options: >-
           --health-cmd pg_isready
@@ -50,12 +50,12 @@ jobs:
         PGHOST: localhost
         PGUSER: postgres
         PGPASSWORD: mysecretpassword
-        PGDATABASE: forumapi
+        PGDATABASE: forumapi_test
         PGPORT: 5432
         PGHOST_TEST: localhost
         PGUSER_TEST: postgres
         PGPASSWORD_TEST: mysecretpassword
-        PGDATABASE_TEST: forumapi
+        PGDATABASE_TEST: forumapi_test
         PGPORT_TEST: 5432
         ACCESS_TOKEN_KEY: secret
         REFRESH_TOKEN_KEY: terces
