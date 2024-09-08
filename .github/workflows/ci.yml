@@ -46,6 +46,7 @@ jobs:
         CI: true
         HOST: localhost
         PORT: 5000
+        DBPROTOCOL: postgres
         PGHOST: localhost
         PGPORT: 5432
         PGUSER: postgres
