@@ -1,8 +1,4 @@
-const { sequelize } = require('./sequelize');
-const UserModel = require('./models/UserModel');
-const ThreadModel = require('./models/ThreadModel');
-const CommentModel = require('./models/CommentModel');
-const ReplyModel = require('./models/ReplyModel');
+const { sequelize, AuthenticationModel, UserModel, ThreadModel, CommentModel, ReplyModel } = require('./index');
 
 (async () => {
     try {
