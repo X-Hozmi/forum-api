@@ -36,6 +36,14 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
+      
+    # Create the second database (forumapi_test)
+    - name: Create test database
+      run: |
+        psql -U postgres -h localhost -c "CREATE DATABASE forumapi_test;"
+      env:
+        PGPASSWORD: mysecretpassword
+
     - name: npm install sequelize and test
       env:
         CI: true
@@ -50,7 +58,7 @@ jobs:
         PGHOST_TEST: localhost
         PGUSER_TEST: postgres
         PGPASSWORD_TEST: mysecretpassword
-        PGDATABASE_TEST: forumapi
+        PGDATABASE_TEST: forumapi_test
         PGPORT_TEST: 5432
         ACCESS_TOKEN_KEY: secret
         REFRESH_TOKEN_KEY: terces
