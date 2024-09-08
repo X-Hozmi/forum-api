@@ -51,7 +51,12 @@ jobs:
         PGPORT: 5432
         PGUSER: postgres
         PGPASSWORD: mysecretpassword
-        PGDATABASE: forumapi_test
+        PGDATABASE: forumapi
+        PGHOST_TEST: localhost
+        PGPORT_TEST: 5432
+        PGUSER_TEST: postgres
+        PGPASSWORD_TEST: mysecretpassword
+        PGDATABASE_TEST: forumapi_test
         ACCESS_TOKEN_KEY: secret
         REFRESH_TOKEN_KEY: terces
         ACCESS_TOKEN_AGE: 3600
