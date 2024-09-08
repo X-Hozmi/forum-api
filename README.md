@@ -20,7 +20,6 @@ Forum API adalah sebuah proyek backend API yang dibangun menggunakan Node.js dan
    ```bash
    git clone https://github.com/X-Hozmi/forum-api.git
    cd forum-api-main
-   npm install
    ```
 
 2. **Install Dependensi**
