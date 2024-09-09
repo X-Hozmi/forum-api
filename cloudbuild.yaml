@@ -5,7 +5,7 @@ steps:
       - '-c'
       - |
         gcloud compute ssh submission-instance-183200 --zone=asia-southeast1-a --command="
-          export PATH=$PATH:/usr/local/bin:/usr/lib/node_modules/pm2/bin && \
+          export PATH=/root/.nvm/versions/node/v20.17.0/lib/node_modules && \
           cd ~/forum-api && \
           git pull origin main && \
           npm install && \
