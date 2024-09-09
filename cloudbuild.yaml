@@ -4,8 +4,8 @@ steps:
     args:
       - '-c'
       - |
-        git clone https://github.com/X-Hozmi/forum-api.git ~/forum-api
-        cd ~/forum-api
+        git clone https://github.com/X-Hozmi/forum-api.git /workspace/forum-api
+        cd /workspace/forum-api
         git pull origin main
         npm install
         npm run sequelize:setup
