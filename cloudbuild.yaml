@@ -19,4 +19,7 @@ steps:
   - name: 'gcr.io/cloud-builders/pm2'
     args: ['restart', 'forum-api']
 
+options:
+  logging: CLOUD_LOGGING_ONLY
+
 timeout: "1200s"
