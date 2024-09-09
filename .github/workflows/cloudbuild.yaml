@@ -1,22 +1,33 @@
-steps:
-  - name: 'gcr.io/cloud-builders/git'
-    entrypoint: 'bash'
-    args:
-      - '-c'
-      - |
-        git clone https://github.com/X-Hozmi/forum-api.git ~/forum-api
-        cd ~/forum-api
-        git pull origin main
-        npm install
-        npm run sequelize:setup
+name: Continuous Deployment
+ 
+on: 
+  push:
+    branches:
+      - main
 
-  - name: 'gcr.io/cloud-builders/npm'
-    args: ['install']
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
 
-  - name: 'gcr.io/cloud-builders/npm'
-    args: ['run', 'sequelize:setup']
+    steps:
+      - name: 'gcr.io/cloud-builders/git'
+        entrypoint: 'bash'
+        args:
+          - '-c'
+          - |
+            git clone https://github.com/X-Hozmi/forum-api.git ~/forum-api
+            cd ~/forum-api
+            git pull origin main
+            npm install
+            npm run sequelize:setup
 
-  - name: 'gcr.io/cloud-builders/pm2'
-    args: ['restart', 'forum-api']
+      - name: 'gcr.io/cloud-builders/npm'
+        args: ['install']
 
-timeout: "1200s"
+      - name: 'gcr.io/cloud-builders/npm'
+        args: ['run', 'sequelize:setup']
+
+      - name: 'gcr.io/cloud-builders/pm2'
+        args: ['restart', 'forum-api']
+
+    timeout: "1200s"
