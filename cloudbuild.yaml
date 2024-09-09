@@ -11,4 +11,8 @@ steps:
           npm run sequelize:setup && \
           pm2 restart forum-api
         "
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+
 timeout: "1200s"
